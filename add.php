@@ -1,4 +1,5 @@
 <html>
+    
     <head>
     <h1>Create Data Baru</h1>
     </head>
@@ -15,15 +16,29 @@
                     <td>Pengarang</td>
                     <td><input type="text" name="pengarang"></td>
                 </tr>
-                <tr> 
+                <tr>
                     <td>Penerbit</td>
-                    <td><input type="text" name="penerbit"></td>
+                    <td>
+                        <select name="penerbit" id="penerbit">
+                          <option disabled selected> Pilih </option>
+                          <?php 
+                          include_once("koneksi.php");
+                          $query_mysql = mysqli_query($mysqli,"SELECT * FROM penerbit")or die(mysqli_error());
+                          while ($data=mysqli_fetch_array($query_mysql)) {
+                         ?>
+                          <option value=<?php echo $data['id']; ?>><?php echo $data['nama_penerbit']; ?> </option>
+                         <?php
+                          }
+                         ?>
+                        </select>
+                    </td>
                 </tr>
                 <tr> 
                     <td>Stok</td>
                     <td><input type="text" name="stok"></td>
                 </tr>
-                <tr> 
+                <tr>
+                    
                     <td></td>
                     <td><input type="submit" name="Submit" value="Add"></td>
                 </tr>

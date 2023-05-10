@@ -1,6 +1,6 @@
 <?php
 // include database connection file
-include_once("config.php");
+include_once("koneksi.php");
  
 // Check if form is submitted for user update, then redirect to homepage after update
 if(isset($_POST['update']))
@@ -12,10 +12,10 @@ if(isset($_POST['update']))
     $stok=$_POST['stok'];
         
     // update user data
-    $result = mysqli_query($mysqli, "UPDATE users SET name='$name',email='$email',mobile='$mobile' WHERE id=$id");
+    $result = mysqli_query($mysqli, "UPDATE buku SET judul='$judul',pengarang='$pengarang',penerbit='$penerbit','stok=$stok' WHERE id=$id");
     
     // Redirect to homepage to display updated user in list
-    header("Location: index.php");
+    header("location: index.php");
 }
 ?>
 <?php
@@ -47,23 +47,35 @@ while($user_data = mysqli_fetch_array($result))
         <table border="0">
             <tr> 
                 <td>Judul</td>
-                <td><input type="text" name="name" value=<?php echo $judul;?>></td>
+                <td>
+                    <input type="text" name="judul" value=<?php echo $judul;?>>
+                </td>
             </tr>
             <tr> 
                 <td>Pengarang</td>
-                <td><input type="text" name="email" value=<?php echo $pengarang;?>></td>
+                <td>
+                    <input type="text" name="pengarang" value=<?php echo $pengarang;?>>
+                </td>
             </tr>
             <tr> 
                 <td>Penerbit</td>
-                <td><input type="text" name="mobile" value=<?php echo $penerbit;?>></td>
+                <td>
+                    <input type="text" name="penerbit" value=<?php echo $penerbit;?>>
+                </td>
             </tr>
             <tr> 
                 <td>Stok</td>
-                <td><input type="text" name="mobile" value=<?php echo $stok;?>></td>
+                <td>
+                    <input type="text" name="stok" value=<?php echo $stok;?>>
+                </td>
             </tr>
             <tr>
-                <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update"></td>
+                <td>
+                    <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+                </td>
+                <td>
+                    <input type="submit" name="update" value="Update">
+                </td>
             </tr>
         </table>
     </form>
