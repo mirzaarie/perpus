@@ -1,4 +1,5 @@
 <html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <head>
     <h1>Menampilkan Tabel</h1>
     </head>
@@ -13,7 +14,8 @@
     			<th>Judul</th>
     			<th>Pengarang</th>
     			<th>Penerbit</th>
-    			<th>Stok</th>		
+    			<th>Stok</th>
+				<th>Aksi</th>		
 		    </tr>           
         <?php 
         //Select Tabel Buku dari database
@@ -28,6 +30,9 @@
     			<td><?php echo $data['pengarang']; ?></td>
     			<td><?php echo $data['penerbit']; ?></td>
                 <td><?php echo $data['stok']; ?></td>
+				<td>Edit 
+					<a href='delete.php?id=<?php echo $data['id'];?>'>Delete</a>
+				</td>
             </tr>
             <?php } ?>
             
