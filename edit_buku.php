@@ -4,7 +4,7 @@ include("koneksi.php");
 
 // kalau tidak ada id di query string
 if( !isset($_GET['id']) ){
-    header('Location: index.php');
+    header('Location: view_buku.php');
 }
 
 // //ambil id dari query string
@@ -46,7 +46,7 @@ while($user_data = mysqli_fetch_array($result))
     <header>
         <h3>Formulir Edit Siswa</h3>
     </header>
-    <form method="POST" action="proses-edit.php">
+    <form method="POST" action="proses-edit_buku.php">
         <table border="0">
             <tr> 
                 <td>Judul</td>

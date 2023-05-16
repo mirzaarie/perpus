@@ -6,7 +6,7 @@
 
     <body>
         <h3>Data buku</h3>
-	    <form action="add.php" method="post" name="form1">
+	    <form action="add_buku.php" method="post" name="form1">
             <table width="25%" border="0">
                 <tr> 
                     <td>Judul</td>
@@ -62,7 +62,7 @@
         
         // Show message when user added
        // echo "Data added successfully. <a href='index.php'>View Data Buku</a>";
-        header("location:index.php");
+        header("location:view_buku.php");
 
     }
     ?>

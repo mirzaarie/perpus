@@ -10,6 +10,6 @@ $result = mysqli_query($mysqli, "DELETE FROM buku WHERE id=$id");
  
 // After delete redirect to Home, so that latest user list will be displayed.
 
-header("location:index.php");
+header("location:view_buku.php");
 ?>
 

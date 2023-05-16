@@ -13,7 +13,7 @@ if(isset($_POST['simpan'])){
 
     // buat query update
     $result = mysqli_query($mysqli, "UPDATE buku SET judul='$judul',pengarang='$pengarang',penerbit='$penerbit', stok='$stok' WHERE id=$id");
-    header('Location: index.php');
+    header('Location: view_buku.php');
 
     // $query = mysqli_query($db, $sql);
 
