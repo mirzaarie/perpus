@@ -25,6 +25,7 @@
                           include_once("koneksi.php");
                           $query_mysql = mysqli_query($mysqli,"SELECT * FROM penerbit")or die(mysqli_error());
                           while ($data=mysqli_fetch_array($query_mysql)) {
+                            foreach($query_mysql as $data){
                          ?>
                           <option value=<?php echo $data['id']; ?>><?php echo $data['nama_penerbit']; ?> </option>
                          <?php

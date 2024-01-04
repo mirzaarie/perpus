@@ -1,11 +1,11 @@
 <?php
 
-include("koneksi.php");
+// include("koneksi.php");
 
-// kalau tidak ada id di query string
-if( !isset($_GET['id']) ){
-    header('Location: view_buku.php');
-}
+// // kalau tidak ada id di query string
+// if( !isset($_GET['id']) ){
+//     header('Location: view_buku.php');
+// }
 
 // //ambil id dari query string
 // $id = $_GET['id'];
@@ -20,6 +20,12 @@ if( !isset($_GET['id']) ){
 // if( mysqli_num_rows($query) < 1 ){
 //     die("data tidak ditemukan...");
 // }
+include("koneksi.php");
+
+// kalau tidak ada id di query string
+if( !isset($_GET['id']) ){
+    header('Location: view_buku.php');
+}
 $id = $_GET['id'];
  
 // Fetech user data based on id

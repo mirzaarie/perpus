@@ -14,6 +14,9 @@ if(isset($_POST['simpan'])){
     // buat query update
     $result = mysqli_query($mysqli, "UPDATE buku SET judul='$judul',pengarang='$pengarang',penerbit='$penerbit', stok='$stok' WHERE id=$id");
     header('Location: view_buku.php');
+} else {
+    die("Akses dilarang...");
+}
 
     // $query = mysqli_query($db, $sql);
 
@@ -27,8 +30,6 @@ if(isset($_POST['simpan'])){
     // }
 
 
-} else {
-    die("Akses dilarang...");
-}
+
 
 ?>

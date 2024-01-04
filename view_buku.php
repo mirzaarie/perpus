@@ -14,7 +14,7 @@
     <body>
 	
         <h3>Data buku</h3>
-		<button><a href="add_buku.php">Add New User</a><br/><br/></button>
+		<button><a href="add_buku.php">Tambah Buku</a><br/><br/></button>
 		
 	    <table border="1" class="table">
 		    <tr>
